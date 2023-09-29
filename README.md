@@ -1,25 +1,39 @@
-#POKELISTA PYTHON
 
-Este projeto é uma aplicação Flask que consome a api de Pokemon e exibi uma lista de 10 pokemons aleatórios, além de disponilizar um campo de pesquisa e estatisticas de consultas.
-´´´´
-Instalação
-Requisitos
-Python 3.7+
-Flask 1.1.2+
+# PokéLista Python
 
-Instruções
-Clone o repositório para sua máquina local usando [https://github.com/dreamkatana/mvc_poke_front/yourrepository.git](https://github.com/dreamkatana/mvc_poke_front.git).
-´´´´
-Para o DOCKER utilize só os comandos abaixo:
-docker-compose build (lembre-se de ter o nome da imagem do projeto de BD, pois os dois se comunicam https://github.com/dreamkatana/mvc_pode_bd2)
-docker-compose up
+## Visão Geral
+Este projeto é uma aplicação Flask que busca dados da API Pokémon e exibe uma lista de 10 Pokémon aleatórios. Também fornece um campo de pesquisa e apresenta estatísticas das consultas.
 
+## Instalação
 
-#Contribuição
-Contribuições são sempre bem-vindas! Por favor, veja o arquivo CONTRIBUTING.md para mais detalhes.
+### Requisitos
+- Python 3.7+
+- Flask 1.1.2+
 
-#Suporte
-Se você encontrar um bug ou tiver alguma sugestão, por favor, abra uma issue no GitHub.
+### Instruções
+1. Clone o repositório para sua máquina local:
+   ```
+   git clone https://github.com/dreamkatana/mvc_poke_front.git
+   ```
 
-#Licença
-Este projeto é licenciado sob a licença MIT. Veja o arquivo LICENSE.md para mais detalhes.
+### Configuração Docker
+Se você estiver usando Docker, siga os comandos abaixo:
+
+1. Construa a imagem Docker (lembre-se de especificar o nome da imagem do projeto do banco de dados, pois ambos os projetos se comunicam):
+   ```
+   docker-compose build
+   ```
+   (Referência do projeto de BD: [https://github.com/dreamkatana/mvc_poke_bd2](https://github.com/dreamkatana/mvc_poke_bd2))
+2. Inicie os serviços:
+   ```
+   docker-compose up
+   ```
+
+## Contribuição
+Contribuições são sempre bem-vindas! Consulte o arquivo `CONTRIBUTING.md` para obter mais detalhes.
+
+## Suporte
+Se você encontrar algum problema ou tiver alguma sugestão, por favor, abra uma issue no GitHub.
+
+## Licença
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE.md` para obter mais detalhes.
