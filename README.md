@@ -1,10 +1,9 @@
 
 # PokéLista Python
+![image](https://github.com/dreamkatana/mvc_poke_front/assets/7691411/a5194f18-170b-44cb-8766-781466249742)
 
 ## Visão Geral
 Este projeto é uma aplicação Flask que busca dados da API Pokémon e exibe uma lista de 10 Pokémon aleatórios. Também fornece um campo de pesquisa e apresenta estatísticas das consultas.
-
-## Instalação
 
 ### Requisitos
 - Python 3.7+
