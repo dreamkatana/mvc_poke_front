@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />    
+        <script src="https://kit.fontawesome.com/abb211c046.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+        <!-- Script para habilitar/desabilitar o botão de envio com base no input -->
+        <script>
+            function verificaInput() {
+                let inputValor = document.getElementById("inputBusca").value;
+                document.getElementById("botaoEnviar").disabled = !inputValor;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <a href="{{ url_for('home') }}" class="navbar-brand">Inicio</a>
+            <a href="{{ url_for('about') }}" class="navbar-item">Sobre</a>
+            <a href="{{ url_for('estatistica') }}" class="navbar-item">Estatísticas</a>
+            <a href="{{ url_for('contact') }}" class="navbar-item">Contato</a>
+        </div>
+
+        <div class="body-content">
+            {% block content %}
+            {% endblock %}
+            <hr/>
+            <footer>
+                 <!-- Rodapé -->
+                <div class="footer">
+                    <a href="https://github.com/dreamkatana/" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

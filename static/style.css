@@ -318,3 +318,72 @@ img {
         margin-bottom: 6%;
     }
 }
+
+/* Estilização do campo de entrada */
+#inputBusca {
+    font-size: 16px; /* Tamanho da fonte */
+    padding: 10px 15px; /* Espaçamento interno */
+    width: 70%; /* Largura do campo */
+    border: 2px solid #ddd; /* Borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-right: 10px; /* Margem à direita */
+    transition: all 0.3s ease; /* Efeito de transição */
+}
+
+#inputBusca:focus {
+    border-color: #007BFF; /* Cor da borda quando o campo está focado */
+    box-shadow: 0 0 5px rgba(0,123,255,0.5); /* Sombra quando focado */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Estilização do botão */
+#botaoEnviar {
+    font-size: 16px; /* Tamanho da fonte */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #00e1ff; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Estilo do cursor */
+    transition: all 0.3s ease; /* Efeito de transição */
+}
+
+#botaoEnviar:hover {
+    background-color: #02f82b; /* Cor de fundo ao passar o mouse */
+}
+
+#botaoEnviar:disabled {
+    background-color: #ccc; /* Cor de fundo quando desabilitado */
+    cursor: not-allowed; /* Estilo do cursor quando desabilitado */
+}
+
+/* Estilos básicos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Estilização da tabela */
+.centralized-table {
+    width: 80%;
+    max-width: 800px;  /* Largura máxima da tabela */
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.centralized-table th, .centralized-table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.centralized-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.centralized-table tr:hover {
+    background-color: #f5f5f5;
+}
+

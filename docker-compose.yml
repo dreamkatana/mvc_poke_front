@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  searches_service:
+    image: mvc_bd  # Trocar pelo nome da imagem com o /searches endpoint
+    ports:
+      - "5001:5001"
+    networks:
+      - app-network
+
+  flask_app:
+    build: .  # Build the Dockerfile in the current directory
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+    depends_on:
+      - searches_service
+
+networks:
+  app-network:
+    driver: bridge

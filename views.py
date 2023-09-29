@@ -1,13 +1,12 @@
-import random
-from flask import Flask, render_template, request
+from flask import render_template, request
 import requests
-
-app = Flask(__name__)
+import random
+from . import app
 
 # API COM A LISTA DE POKEMONS
 BASE_URL = "https://pokeapi.co/api/v2/pokemon"
 
-# Fetch the list of the first 10 Pokémon and their detailed data
+# Busca os 10 primeiros Pokemons e seus detalhes
 def fetch_pokemon_list():
     # Randomly select 10 Pokémon
     offset = random.randint(1, 1000)
@@ -16,7 +15,7 @@ def fetch_pokemon_list():
     detailed_pokemons = [requests.get(poke["url"]).json() for poke in pokemon_summaries]
     return detailed_pokemons
 
-# Fetch detailed data for a specific Pokémon by name
+# Busca o Pokemon pelo nome
 def fetch_pokemon_detail(pokemon_name):
     response = requests.get(f"{BASE_URL}/{pokemon_name}")
     # Check if the request was successful
@@ -27,7 +26,7 @@ def fetch_pokemon_detail(pokemon_name):
         return response.json()
     except ValueError:  # Handle non-JSON responses
         raise ValueError(f"Failed to decode API response as JSON: {response.text}")
-
+    
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
@@ -40,10 +39,25 @@ def home():
             "ip_address": ip_address,
             "pokemon_name": pokemon_name
         }
-        response = requests.post('http://localhost:5001/searches', json=body)
+        response = requests.post('http://searches_service:5001/searches', json=body)
         searched_pokemon = [fetch_pokemon_detail(pokemon_name)]
         return render_template('principal.html', pokemons=searched_pokemon)
     return render_template('principal.html', pokemons=fetch_pokemon_list())
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route("/home")
+def inicio():
+    return render_template("home.html")
+
+@app.route("/about/")
+def about():
+    return render_template("about.html")
+
+@app.route("/contact/")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/estatisticas/")
+def estatistica():
+    response = requests.get("http://searches_service:5001/searches")
+    searches = response.json()
+    return render_template('estatistica.html', searches=searches)
