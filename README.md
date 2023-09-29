@@ -1,6 +1,6 @@
-#POKEDEX PYTHON
+#POKELISTA PYTHON
 
-Este projeto é uma aplicação Flask que expõe uma API REST para operações em "Lojas" e "Itens". Cada "Loja" pode ter vários "Itens".
+Este projeto é uma aplicação Flask que consome a api de Pokemon e exibi uma lista de 10 pokemons aleatórios, além de disponilizar um campo de pesquisa e estatisticas de consultas.
 ´´´´
 Instalação
 Requisitos
@@ -13,10 +13,6 @@ Clone o repositório para sua máquina local usando [https://github.com/dreamkat
 Para o DOCKER utilize só os comandos abaixo:
 docker-compose build (lembre-se de ter o nome da imagem do projeto de BD, pois os dois se comunicam https://github.com/dreamkatana/mvc_pode_bd2)
 docker-compose up
-
-
-´´´´
-Você pode interagir com a API usando uma ferramenta como cURL, Postman ou um navegador web.
 
 
 #Contribuição
